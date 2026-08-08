@@ -1,0 +1,41 @@
+name: CodeBoarding sync
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '.codeboarding/*.md'
+      - '.codeboarding/analysis.json'
+      - '.codeboarding/fingerprint.json'
+      - '.codeboarding/static_analysis.pkl'
+      - '.codeboarding/static_analysis.sha'
+      - '.codeboarding/codeboarding_version.json'
+      - '.codeboarding/health/health_report.json'
+      - 'docs/development/architecture.md'
+  workflow_dispatch:
+    inputs:
+      force_full:
+        description: Rebuild without the committed baseline
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+concurrency:
+  group: codeboarding-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: CodeBoarding/CodeBoarding-action@main
+        with:
+          mode: sync
+          target_branch: main
+          sync_strategy: pull_request
+          force_full: ${{ inputs.force_full || false }} 
