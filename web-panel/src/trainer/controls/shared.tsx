@@ -5,6 +5,10 @@ import { cn } from '@/shared/lib/ui';
 
 import type { CheatSchema } from '../../../protocol/messages';
 
+export function isSameOption(left: unknown, right: unknown): boolean {
+  return String(left) === String(right);
+}
+
 export type ControlInternalProps = {
   cheat: CheatSchema;
   value: unknown;

@@ -6,7 +6,7 @@ import { cn } from '@/shared/lib/ui';
 
 import type { CheatOption } from '../../../protocol/messages';
 import { resolveOption } from '../model/values';
-import type { ControlInternalProps } from './shared';
+import { isSameOption, type ControlInternalProps } from './shared';
 
 export const SelectionControl = ({ cheat, value, disabled, onChange }: ControlInternalProps) => {
   const options = (cheat.args.options ?? []).map(resolveOption);
@@ -68,8 +68,4 @@ function optionKey(option: CheatOption): string {
 
 function findOption(options: CheatOption[], value: string): CheatOption | undefined {
   return options.find((option) => String(option.value) === value);
-}
-
-function isSameOption(left: unknown, right: unknown): boolean {
-  return String(left) === String(right);
 }

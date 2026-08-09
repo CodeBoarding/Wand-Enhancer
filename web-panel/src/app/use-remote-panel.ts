@@ -87,7 +87,6 @@ export function useRemotePanel() {
       values: session.state.values,
       pendingTargets: session.pendingTargets,
       connected: session.connected,
-      socketReady: session.socketReady,
       connect: session.connect,
       disconnect: session.disconnect,
       setWsUrl: session.setWsUrl,

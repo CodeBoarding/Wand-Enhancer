@@ -76,9 +76,9 @@
         <Compile Include="Core\Services\SettingsManager.cs" />
         <Compile Include="Models\WeModConfig.cs" />
         <Compile Include="Models\PatchConfig.cs" />
-        <Compile Include="Models\Signature.cs" />
+
         <Compile Include="Program.cs" />
-        <Compile Include="ReactiveUICore\AsyncRelayCommand.cs" />
+
         <Compile Include="ReactiveUICore\ObservableObject.cs" />
         <Compile Include="ReactiveUICore\RelayCommand.cs" />
         <Compile Include="Utils\Common.cs" />

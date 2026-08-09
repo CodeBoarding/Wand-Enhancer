@@ -20,13 +20,13 @@ type CheatControlProps = {
 };
 
 const CONTROL_BY_TYPE: Record<ECheatType, (props: ControlInternalProps) => ReactElement> = {
-  [ECheatType.Toggle]: (props) => <ToggleControl {...props} />,
-  [ECheatType.Slider]: (props) => <SliderControl {...props} />,
-  [ECheatType.Number]: (props) => <NumberControl {...props} />,
-  [ECheatType.Button]: (props) => <ActionButton {...props} />,
-  [ECheatType.Selection]: (props) => <SelectionControl {...props} />,
-  [ECheatType.Scalar]: (props) => <ScalarControl {...props} />,
-  [ECheatType.Incremental]: (props) => <IncrementalControl {...props} />,
+  [ECheatType.Toggle]: ToggleControl,
+  [ECheatType.Slider]: SliderControl,
+  [ECheatType.Number]: NumberControl,
+  [ECheatType.Button]: ActionButton,
+  [ECheatType.Selection]: SelectionControl,
+  [ECheatType.Scalar]: ScalarControl,
+  [ECheatType.Incremental]: IncrementalControl,
 };
 
 export const CheatControl = ({ cheat, value, pending, disabled, onChange }: CheatControlProps) => {
