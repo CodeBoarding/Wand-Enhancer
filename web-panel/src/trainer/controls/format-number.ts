@@ -1,6 +1,6 @@
 const NUMBER_FORMAT_LOCALE = 'en-US';
 const NUMBER_MAX_FRACTION_DIGITS = 6;
-const NUMBER_GROUP_SEPARATOR_PATTERN = /[,\s]/g;
+export const NUMBER_GROUP_SEPARATOR_PATTERN = /[,\s]/g;
 
 export const groupedNumberFormat = new Intl.NumberFormat(NUMBER_FORMAT_LOCALE, { maximumFractionDigits: NUMBER_MAX_FRACTION_DIGITS });
 

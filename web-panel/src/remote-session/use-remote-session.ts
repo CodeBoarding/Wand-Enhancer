@@ -169,7 +169,6 @@ export function useRemoteSession() {
     state,
     connected,
     pendingTargets,
-    socketReady: connected,
     connect,
     disconnect,
     setWsUrl,

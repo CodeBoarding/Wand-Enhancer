@@ -1,6 +1,5 @@
 import { ECheatType, type CheatOption, type CheatOptionLike, type CheatSchema } from '../../../protocol/messages';
-
-const NUMBER_GROUP_SEPARATOR_PATTERN = /[,\s]/g;
+import { NUMBER_GROUP_SEPARATOR_PATTERN } from '../controls/format-number';
 
 export function resolveOption(option: CheatOptionLike): CheatOption {
   if (typeof option === 'string' || typeof option === 'number') {

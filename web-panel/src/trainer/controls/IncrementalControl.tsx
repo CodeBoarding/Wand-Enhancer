@@ -2,7 +2,7 @@ import { cn } from '@/shared/lib/ui';
 
 import { resolveOption } from '../model/values';
 import { ActionButton } from './ActionButton';
-import { StepButton, type ControlInternalProps } from './shared';
+import { isSameOption, StepButton, type ControlInternalProps } from './shared';
 
 const INCREMENTAL_STEP_GRID = 'grid-cols-[46px_minmax(0,1fr)_46px]';
 
@@ -27,7 +27,3 @@ export const IncrementalControl = ({ cheat, value, disabled, onChange }: Control
     </div>
   );
 };
-
-function isSameOption(left: unknown, right: unknown): boolean {
-  return String(left) === String(right);
-}
