@@ -38,4 +38,5 @@ jobs:
           mode: sync
           target_branch: main
           sync_strategy: pull_request
+          llm: hosted
           force_full: ${{ inputs.force_full || false }} 
