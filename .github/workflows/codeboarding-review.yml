@@ -25,3 +25,5 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: CodeBoarding/CodeBoarding-action@refactor/review-baseline-pipeline
+        with:
+          llm: hosted
